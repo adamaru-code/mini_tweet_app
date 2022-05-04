@@ -1,17 +1,8 @@
-<header>
-  <div class="header-logo">
-    <a href="/">MiniTweet</a>
-  </div>
-  <ul class="header-menus">
-    <li><a href="/about">MiniTweetについて</a></li>
-  </ul>
-</header>
-
 <div class="main posts-index">
   <div class="container">
     <% @posts.each do |post| %>
       <div class="posts-index-item">
-        <%= post %>
+        <%= post.content %>
       </div>
     <% end %>
   </div>
