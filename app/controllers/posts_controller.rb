@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   end
   
   def create
+    redirect_to posts_index_url #コントローラー内で名前付きルーティングを記述場合、…_urlと記述
   end
   
   def index
