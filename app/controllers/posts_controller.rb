@@ -4,7 +4,6 @@ class PostsController < ApplicationController
   end
   
   def create
-    params[:content]
     @post = Post.new(content: params[:content])
     @post.save
     redirect_to posts_index_url #コントローラー内で名前付きルーティングを記述場合、…_urlと記述
@@ -12,6 +11,7 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all
+    
   end
   
   def show
