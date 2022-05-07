@@ -28,7 +28,8 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_index_url
     else
-      redirect_to edit_post_url @post  # (@post.id)を　@post　とシンプル記述可能
+      # redirect_to edit_post_url @post  # (@post.id)を　@post　とシンプル記述可能
+      render :edit
     end
   end
   
