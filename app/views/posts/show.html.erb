@@ -2,6 +2,9 @@
   <div class="container">
     <div class="posts-show-item">
       <p><%= @post.content %></p>
+      <div class="post-menus">
+        <%= link_to "編集", edit_post_path(@post.id), class: "post_edit_button" %>
+      </div>
     </div>
   </div>
 </div>
