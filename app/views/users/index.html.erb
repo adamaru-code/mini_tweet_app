@@ -1,0 +1,13 @@
+<div class="main users-index">
+  <div class="container">
+    <h1 class="users-heading">ユーザー一覧</h1>
+    <!-- ユーザーを一覧表示するためのeach文を追加しましょう -->
+    <% @users.each do |user| %>
+      <div class="users-index-item">
+        <div class="user-right">
+          <%= user.name %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
