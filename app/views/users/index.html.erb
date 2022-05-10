@@ -1,9 +1,11 @@
 <div class="main users-index">
   <div class="container">
-    <h1 class="users-heading">ユーザー一覧</h1>
-    <!-- ユーザーを一覧表示するためのeach文を追加しましょう -->
+    <h1 class="users-heading">全てのユーザー</h1>
     <% @users.each do |user| %>
       <div class="users-index-item">
+        <div class="user-left">
+          <%= image_tag "/user_images/#{user.image}" %>
+        </div>
         <div class="user-right">
           <%= link_to user.name, user_path(user.id) %>
         </div>
