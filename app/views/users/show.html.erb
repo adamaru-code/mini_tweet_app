@@ -3,6 +3,7 @@
     <div class="user">
       <h2><%= @user.name %></h2>
       <p><%= @user.email %></p>
+      <%= link_to "ユーザー情報を編集する", edit_user_path(@user.id), class: "user_edit_button" %>
     </div>
   </div>
 </div>
