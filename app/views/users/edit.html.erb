@@ -1,7 +1,7 @@
 <div class="main users-edit">
   <div class="container">
     <div class="form-heading">ユーザーの編集</div>
-    <%= form_tag user_path, method: :patch do %>
+    <%= form_tag user_path, method: :patch, multipart: true do %>
       <div class="form users-form">
         <div class="form-body">
           <% @user.errors.full_messages.each do |message| %>
@@ -11,6 +11,8 @@
           <input name="name" value="<%= @user.name %>">
           <p>メールアドレス</p>
           <input name="email" value="<%= @user.email %>">
+          <p>プロフィール画像</p>
+          <input name="image" type="file">
           <input type="submit" value="保存">
         </div>
       </div>
