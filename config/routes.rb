@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   get 'posts/:id/edit', to: 'posts#edit', as: :edit_post
   post 'posts/:id/update', to: 'posts#update', as: :update_post
   post 'posts/:id/destroy', to: 'posts#destroy', as: :destroy_post
-  get 'login', to: 'users#login_page'
+  get 'login', to: 'users#login_page' #link_toはデフォルトでgetのルーティングを探す
+  post 'login', to: 'users#login'     #form_tagはデフォルトでpostのルーティングを探す
   
   resources :users
 end
