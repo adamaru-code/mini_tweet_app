@@ -50,5 +50,14 @@ class UsersController < ApplicationController
   
   def login
     @user = User.find_by(email: params[:email], password: params[:password]) #find_byメソッドはカラムを指定してデータを取得する/findメソッドはidの値を指定してデータを取得する。（idのみ！）
+    if @user
+      flash[:notice] = "ログインしました。"
+      redirect_to posts_index_url
+    else
+      @error_message = "メールアドレスまたはパスワードが間違っています。"
+      @email = params[:email]
+      @password = params[:password]
+      render :login_page
+    end
   end
 end
