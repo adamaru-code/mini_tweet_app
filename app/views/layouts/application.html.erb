@@ -14,8 +14,8 @@
         <%= link_to "MiniTweet", root_path %>
       </div>
       <ul class="header-menus">
-        <% if session[:user_id] %>
-          <li>現在ログイン中のユーザー【<%= User.find(session[:user_id]).name %>】</li>
+        <% if @current_user %>
+          <li><%= link_to @current_user.name,user_path(@current_user) %></li>
           <li><%= link_to "投稿一覧", posts_index_path %></li>
           <li><%= link_to "新規投稿", posts_new_path %></li>
           <li><%= link_to "全てのユーザー", users_path %></li>
