@@ -51,6 +51,7 @@ class UsersController < ApplicationController
   def login
     @user = User.find_by(email: params[:email], password: params[:password]) #find_byメソッドはカラムを指定してデータを取得する/findメソッドはidの値を指定してデータを取得する。（idのみ！）
     if @user
+      session[:user_id] = @user.id
       flash[:notice] = "ログインしました。"
       redirect_to posts_index_url
     else
