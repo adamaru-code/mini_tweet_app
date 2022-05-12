@@ -6,7 +6,10 @@ class PostsController < ApplicationController
   end
   
   def create
-    @post = Post.new(content: params[:content])
+    @post = Post.new(
+      content: params[:content],
+      user_id: @current_user.id,
+      )
     if @post.save
       flash[:notice] = "投稿しました！"
       redirect_to posts_index_url #コントローラー内で名前付きルーティングを記述場合、…_urlと記述
@@ -22,6 +25,7 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find(params[:id])
+    @user = User.find(@post.user_id)
   end
   
   def edit
