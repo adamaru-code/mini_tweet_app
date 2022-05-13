@@ -25,7 +25,7 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find(params[:id])
-    @user = User.find(@post.user_id)
+    @user = @post.user # 9章9.5 Postモデルでuser定義後、@user = User.find(@post.user_id) を書き換え
   end
   
   def edit
