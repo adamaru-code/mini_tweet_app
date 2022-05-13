@@ -7,10 +7,12 @@
         <%= link_to @user.name,user_path(@user) %>
       </div>
       <p><%= @post.content %></p>
-      <div class="post-menus">
-        <%= link_to "編集", edit_post_path(@post.id), class: "post_edit_button" %>
-        <%= link_to "削除", destroy_post_path(@post.id), method: :post, class: "post_delete_button" %>
-      </div>
+      <% if @post.user_id == @current_user.id %>
+        <div class="post-menus">
+          <%= link_to "編集", edit_post_path(@post.id), class: "post_edit_button" %>
+          <%= link_to "削除", destroy_post_path(@post.id), method: :post, class: "post_delete_button" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
